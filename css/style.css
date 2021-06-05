@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(128,247,249,1) 0%, rgba(0,210,252,1) 100%);
+}
+
+.mobile-freame-size{
+    height: 6.5in;
+    width: 3.2in;
+    border: 6px solid #000;
+    border-top: 7px solid #000;
+    border-bottom: 15px solid #000;
+    margin: 0 auto;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    overflow: hidden;
+    background: url('../img/bg_img.png') no-repeat center;
+}
+
+.notification-bar{
+    height: 25px;
+    padding: 4px 10px;
+}
+
+.notification_flex{
+    display: flex;
+}
+
+.notification_flex div:nth-child(1){
+    flex-grow: 1;
+}
+
+.notification-second-panel i{
+    font-size: 8px;
+    position: relative;
+    bottom: 3px;
+    color: #fff;
+}
+
+.notification-second-panel i:last-child{
+    font-size: 12px;
+    bottom: 1.5px;
+}
+
+.f_cam img{
+    height: 20px;
+    width: auto;
+}
+
+/* goog;e seach bar*/
+
+.google-search-bar{
+    padding: 30px 15px;
+}
+
+.google-round-search{
+    height: 35px;
+    width: 100%;
+    /*border: 1px solid #000;
+    */background-color: hsla(0, 0%, 100%, .80);
+    border-radius: 17px;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    -ms-border-radius: 17px;
+    -o-border-radius: 17px;
+    position: relative;
+    display: flex;
+    padding: 8.5px 12px
+}
+
+.g-logo{
+    flex-grow: 1;
+}
+
+.google-round-search img{
+    height: 18px;
+}
+
+.google-v-l img:first-child{
+    padding: 0 12px;
+}
