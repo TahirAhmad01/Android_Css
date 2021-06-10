@@ -18,9 +18,9 @@ body{
 .mobile-freame-size{
     height: 624px;
     width: 307.2px;
-    border: 6px solid #000;
-    border-top: 7px solid #000;
-    border-bottom: 15px solid #000;
+    border: 4px solid #000;
+    border-top: 5px solid #000;
+    border-bottom: 8px solid #000; 
     margin: 0 auto;
     border-radius: 25px;
     -webkit-border-radius: 25px;
@@ -29,12 +29,91 @@ body{
     -o-border-radius: 25px;
     overflow: hidden;
     background: url('../img/bg_img.png') no-repeat center;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes open{
+    0%{
+        opacity: 1;
+    }
+
+    90%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes fade_image{
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.loader{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    opacity: 0;
+    z-index: 99;
+    padding: 0 20px;
+    background-color: #000;
+    animation: open linear 10s;
+    -webkit-animation: open linear 4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-image{
+    margin: 0 auto;
+    animation: fade_image linear 3.5s;
+    -webkit-animation: fade_image linear 3.5s;
+    opacity: 0;
+}
+
+.loader-image > div:nth-child(2){
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.loader-image img{
+    width: 50%;
+    margin: 0 auto;
+    display: block;
 }
 
 .body-flex{
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.middle_body{
+    height: 100%;
+    width: 100%;
 }
 
 .body-flex > div:nth-child(2){
@@ -178,10 +257,10 @@ body{
     /* background-color: rgb(214, 214, 214); */
 }
 
-.items-inner div{
+.items-inner > div{
     height: 40px;
     width: 40px;
-    background-color: #ccc;
+    background-color: rgba(204, 204, 204, 0.507);
     border-radius: 9px;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
@@ -190,6 +269,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 3px;
+    overflow: hidden;
+}
+
+.items_img img{
+    width: 100%;
+    height: 100%;
 }
 
 .filled{
@@ -198,14 +284,36 @@ body{
 
 .navigation-button{
     height: 25px;
-    background-color: #fff;
+    color: #fff;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 0 25px;
+    
 }
 
-.navigation-button div:last-child{
-    font-size: 20px;
+.navigation-button div{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 13px;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -o-border-radius: 13px;
+}
+
+.navigation-button div:hover{
+    background-color: rgba(204, 204, 204, 0.507);
+}
+
+.navigation-button i{
+    font-size: 10px;
+}
+
+.navigation-button div:last-child i{
+    font-size: 12px;
 }
 
 .slider-circle{
@@ -234,7 +342,7 @@ body{
     height: 7px;
     display: flex;
     justify-content: center;
-
+    overflow: auto;
 }
 
 .owl-dots button.owl-dot{
@@ -249,8 +357,104 @@ body{
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     display: block;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
 }
 
 .owl-dots button.active{
     background-color: #fff !important;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.content-loader-div{
+    height: calc(100% - 50px);
+    width: 100%;
+    background-color: transparent+;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    z-index: 99;
+    display: none;
+}
+
+.content-relative{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.app-open-body{
+    position: absolute;
+    /*top: 10%;
+    left: 10%;
+    */height: 40px;
+    width: 40px;
+    background-color: rgba(204, 204, 204, 0.507);
+    border-radius: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    -ms-border-radius: 9px;
+    -o-border-radius: 9px;
+}
+
+.item_ready{
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    position: absolute;
+    z-index: 999;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    transition: .4s ease-out;
+    -webkit-transition: .4s ease-out;
+    -moz-transition: .4s ease-out;
+    -ms-transition: .4s ease-out;
+    -o-transition: .4s ease-out;
+}
+
+.conveter{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 999;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+}
+
+.window_close{
+    height: 40px;
+    width: 40px;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+    border-radius: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    -ms-border-radius: 9px;
+    -o-border-radius: 9px;
+    background-color: rgba(204, 204, 204, 0.507);
 }
