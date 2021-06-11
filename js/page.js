@@ -24,19 +24,9 @@ $(function() {
 		if (hour == 0) {
 			hour = 12;
 		}
-
-		// if (sec < 10 ) {
-		// 	var sec= '0' + sec;
-		// }
 		 if (min < 10) {
 			var min = '0' + min;
 		 }
-		// if (hour < 10) {
-		// 	var hour = '0' + hour;
-		// }
-		// if (date < 10) {
-		// 	var date = '0' + date
-		// }
 	
 		$(".hour").text(hour);
 		$(".minute").text(min);
@@ -87,7 +77,7 @@ $(function() {
 		}
 
 		if($(this).attr('id') == "w3"){
-			$(".app-open-body").html("<iframe src='https://dostioyala.ml/default/login'></iframe>");
+			$(".app-open-body").html("<iframe src='https://google.com'></iframe>");
 		}
 
 		$(".app_icon_position").css({
