@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-family: "Roboto";
+    overflow: hidden;
+}
+
+.dialer-body{
+    height: 100%;
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialer-body > div:nth-child(1){
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialer-body > div:nth-child(1) > div:nth-child(1){
+    flex-grow: 1;
+}
+
+.dial-number > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 60px;
+}
+
+.dial-number > div > div{
+    height: 50px;
+    width: 50px;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.dial-number > div > div:active{
+    background-color: #ccc;
+}
+
+.number-show{
+    text-align: center;
+}
+
+.number{
+    font-size: 22px;
+    display: flex;
+    padding: 22px;
+}
+
+.number div:nth-child(1){
+    flex-grow: 1;
+    width: calc(100% - 50px);
+    overflow-x: scroll;
+    margin: 0 10px;
+    white-space: nowrap;
+    scrollbar-color: white white;
+    scrollbar-width: thin;
+}
+
+.number div:nth-child(1)::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+}
+
+
+.number i{
+    font-size: 17px;
+}
+
+.call-ico{
+    background-color: green !important;
+    color: #fff;
+    border: none !important;
+}
+
+.call-ico:active{
+    background-color: red !important;
+}

@@ -69,7 +69,7 @@ $(function() {
 		$(this).addClass("item_ready")
 	})
 
-	$(".items-inner div").on("click", function(){
+	$(".items-inner div div").on("click", function(){
 		var position = $(this).position();
 
 		$(".content-loader-div").css({
@@ -81,6 +81,14 @@ $(function() {
 		},20)
 
 		$(".app-open-body").addClass("app_icon_position");
+
+		if($(this).attr('id') == "call"){
+			$(".app-open-body").html("<iframe src='call.html'></iframe>");
+		}
+
+		if($(this).attr('id') == "w3"){
+			$(".app-open-body").html("<iframe src='https://dostioyala.ml/default/login'></iframe>");
+		}
 
 		$(".app_icon_position").css({
 			left : position.left + "px",
@@ -129,8 +137,10 @@ $(function() {
 		$(".navigation-button").css({
 			"color" : "#fff",
 			"background-color" : "transparent",
-			"transition" : ".2s"
+			"transition" : ".3s"
 		})
+
+		$(".app-open-body iframe").remove();
 
 		$(this).removeClass("enable")
 	

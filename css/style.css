@@ -13,6 +13,7 @@ body{
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(128,247,249,1) 0%, rgba(0,210,252,1) 100%);
     font-family: "Roboto";
     font-weight: 500;
+    overflow: auto;
 }
 
 .mobile-freame-size{
@@ -30,7 +31,6 @@ body{
     overflow: hidden;
     background: url('../img/bg_img.png') no-repeat center;
     position: relative;
-    overflow: hidden;
 }
 
 @keyframes open{
@@ -257,7 +257,7 @@ body{
     /* background-color: rgb(214, 214, 214); */
 }
 
-.items-inner > div{
+.items-inner > div > div{
     height: 40px;
     width: 40px;
     background-color: rgba(204, 204, 204, 0.507);
@@ -402,6 +402,13 @@ body{
     -moz-border-radius: 9px;
     -ms-border-radius: 9px;
     -o-border-radius: 9px;
+    overflow: hidden;
+}
+
+.app-open-body iframe{
+    height: 100%;
+    width: 100%;
+    border: none
 }
 
 .item_ready{
