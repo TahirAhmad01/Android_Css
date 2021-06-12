@@ -18,10 +18,10 @@ body{
 
 .mobile-freame-size{
     height: 624px;
-    width: 307.2px;
+    width: 308px;
     border: 4px solid #000;
     border-top: 5px solid #000;
-    border-bottom: 8px solid #000; 
+    border-bottom: 8px solid #000;
     margin: 0 auto;
     border-radius: 25px;
     -webkit-border-radius: 25px;
@@ -30,7 +30,24 @@ body{
     -o-border-radius: 25px;
     overflow: hidden;
     background: url('../img/bg_img.png') no-repeat center;
+    background-size: 100%;
     position: relative;
+    animation: temp_open linear 4s;
+    -webkit-animation: temp_open linear 4s;
+}
+
+@keyframes temp_open{
+    0%{
+        opacity: 0;
+    }
+
+    80%{
+        opacity: .8;
+    }
+
+    100%{
+        opacity: 1;
+    }
 }
 
 @keyframes open{
@@ -71,8 +88,8 @@ body{
     z-index: 99;
     padding: 0 20px;
     background-color: #000;
-    animation: open linear 10s;
-    -webkit-animation: open linear 4s;
+    animation: open linear 4s 10s;
+    -webkit-animation: open linear 4s 10s;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,8 +97,8 @@ body{
 
 .loader-image{
     margin: 0 auto;
-    animation: fade_image linear 3.5s;
-    -webkit-animation: fade_image linear 3.5s;
+    animation: fade_image linear 4s 7.5s;
+    -webkit-animation: fade_image linear 4s 7.5s;
     opacity: 0;
 }
 
@@ -257,25 +274,33 @@ body{
     /* background-color: rgb(214, 214, 214); */
 }
 
-.items-inner > div > div{
+.items-inner > div{
     height: 40px;
     width: 40px;
-    background-color: rgba(204, 204, 204, 0.507);
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.items-inner > div > div{
+    background-color: rgba(204, 204, 204, 0.932);
     border-radius: 9px;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
     -ms-border-radius: 9px;
     -o-border-radius: 9px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3px;
-    overflow: hidden;
 }
 
-.items_img img{
-    width: 100%;
-    height: 100%;
+.items_img img , .owl-carousel .owl-item img{
+    width: 90%;
 }
 
 .filled{
@@ -304,7 +329,7 @@ body{
     -o-border-radius: 13px;
 }
 
-.navigation-button div:hover{
+.navigation-button div:active{
     background-color: rgba(204, 204, 204, 0.507);
 }
 
@@ -407,6 +432,10 @@ body{
     height: 100%;
     width: 100%;
     border: none
+}
+
+.app-open-body iframe::-webkit-scrollbar-thumb{
+    width: 4px;
 }
 
 .item_ready{

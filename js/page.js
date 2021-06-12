@@ -46,7 +46,7 @@ $(function() {
 
     setTimeout(function(){
 		$(".loader").css({'z-index':'0', 'display' : 'none'}); 
-	},4000);
+	},7000);
 
 	var owl = $('.owl-carousel');
 	owl.owlCarousel({
@@ -72,12 +72,57 @@ $(function() {
 
 		$(".app-open-body").addClass("app_icon_position");
 
+		//call window opwn
 		if($(this).attr('id') == "call"){
 			$(".app-open-body").html("<iframe src='call.html'></iframe>");
 		}
 
-		if($(this).attr('id') == "w3"){
-			$(".app-open-body").html("<iframe src='https://google.com'></iframe>");
+		//contact window opwn
+		if($(this).attr('id') == "contact"){
+			$(".app-open-body").html("<iframe src='contact.html'></iframe>");
+		}
+
+		//message window opwn
+		if($(this).attr('id') == "message"){
+			$(".app-open-body").html("<iframe src='message.html'></iframe>");
+		}
+
+		//message window opwn
+		if($(this).attr('id') == "setting"){
+			$(".app-open-body").html("<iframe src='setting.html'></iframe>");
+		}
+
+		//cute window opwn
+		if($(this).attr('id') == "cute"){
+			$(".app-open-body").html("<iframe src='https://dostioyala.ml/'></iframe>");
+		}
+
+		//calculator window opwn
+		if($(this).attr('id') == "calc"){
+			$(".app-open-body").html("<iframe src='calculator.html'></iframe>");
+		}
+
+		//fast window opwn
+		if($(this).attr('id') == "fast"){
+			$(".app-open-body").html("<iframe src='https://fast.com/'></iframe>");
+		}
+
+		//chess
+		if($(this).attr('id') == "chess"){
+			$(".app-open-body").html("<iframe src='chess.html'></iframe>");
+		}
+
+		//horse run
+		if($(this).attr('id') == "horse"){
+			$(".app-open-body").html("<iframe src='horse_run.html'></iframe>");
+		}
+
+		//golden
+		if($(this).attr('id') == "golden"){
+			setTimeout(function(){
+				$(".app-open-body").html("<iframe src='golden/index.html'></iframe>")
+			}, 400)
+			
 		}
 
 		$(".app_icon_position").css({
