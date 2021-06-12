@@ -65,9 +65,9 @@ body{
 
 .loader{
     position: absolute;
-    height: 102%;
-    width: 102%;
-    top: 0;
+    height: calc(102% + 2px);
+    width: calc(102% + 2px);
+    top: -2px;
     opacity: 0;
     z-index: 99;
     padding: 0 20px;
@@ -89,7 +89,7 @@ body{
 .loader-image > div:nth-child(2){
     position: absolute;
     width: 100%;
-    bottom: 30px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
