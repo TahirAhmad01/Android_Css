@@ -46,7 +46,7 @@ $(function() {
 
     setTimeout(function(){
 		$(".loader").css({'z-index':'0', 'display' : 'none'}); 
-	},7000);
+	},3000);
 
 	var owl = $('.owl-carousel');
 	owl.owlCarousel({

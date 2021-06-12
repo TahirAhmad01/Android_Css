@@ -32,22 +32,6 @@ body{
     background: url('../img/bg_img.png') no-repeat center;
     background-size: 100%;
     position: relative;
-    animation: temp_open linear 4s;
-    -webkit-animation: temp_open linear 4s;
-}
-
-@keyframes temp_open{
-    0%{
-        opacity: 0;
-    }
-
-    80%{
-        opacity: .8;
-    }
-
-    100%{
-        opacity: 1;
-    }
 }
 
 @keyframes open{
@@ -88,8 +72,8 @@ body{
     z-index: 99;
     padding: 0 20px;
     background-color: #000;
-    animation: open linear 4s 10s;
-    -webkit-animation: open linear 4s 10s;
+    animation: open linear 3ss;
+    -webkit-animation: open linear 3ss;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,8 +81,8 @@ body{
 
 .loader-image{
     margin: 0 auto;
-    animation: fade_image linear 4s 7.5s;
-    -webkit-animation: fade_image linear 4s 7.5s;
+    animation: fade_image linear 2.5s;
+    -webkit-animation: fade_image linear 2.5s;
     opacity: 0;
 }
 
