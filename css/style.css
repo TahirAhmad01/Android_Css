@@ -68,6 +68,7 @@ body{
     height: calc(102% + 2px);
     width: calc(102% + 2px);
     top: -2px;
+    left: -2px;
     opacity: 0;
     z-index: 99;
     padding: 0 20px;
