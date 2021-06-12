@@ -30,7 +30,7 @@ body{
     -o-border-radius: 25px;
     overflow: hidden;
     background: url('../img/bg_img.png') no-repeat center;
-    background-size: 100%;
+    background-size: 103%;
     position: relative;
 }
 
@@ -65,15 +65,15 @@ body{
 
 .loader{
     position: absolute;
-    height: 100%;
-    width: 100%;
+    height: 102%;
+    width: 102%;
     top: 0;
     opacity: 0;
     z-index: 99;
     padding: 0 20px;
     background-color: #000;
     animation: open linear 3ss;
-    -webkit-animation: open linear 3ss;
+    -webkit-animation: open linear 3s;
     display: flex;
     justify-content: center;
     align-items: center;
