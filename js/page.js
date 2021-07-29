@@ -94,7 +94,7 @@ $(function() {
 
 		//cute window opwn
 		if($(this).attr('id') == "cute"){
-			$(".app-open-body").html("<iframe src='https://dostioyala.ml/'></iframe>");
+			$(".app-open-body").html("<iframe src='https://dooplays.xyz/'></iframe>");
 		}
 
 		//calculator window opwn
