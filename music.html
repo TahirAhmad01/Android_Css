@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mp3 music Player</title>
+    <link rel="stylesheet" href="css/music.css">
+    <link rel="stylesheet" href="fsm/css/all.min.css">
+</head>
+<body>
+    <div class="main-frame">
+        <div class="top_part">
+            <div class="logo">
+                <i class="fas fa-music"></i> Music
+            </div>
+
+            <div class="music-count">
+                <p id="current_track">0</p>
+                <p>/</p>
+                <p id="total_track">0</p>
+            </div>
+            <div class="playlist">
+            </div>
+        </div>
+        
+
+        <div class="music_sec">
+            <div class="right-side-flex">
+
+                <div class="second_frame">
+                    <div class="volume-sec">
+                        <div class="volume-ico" id="volume_btn">
+                            <i class="fal fa-volume-up"></i>
+                        </div>
+            
+                        <div class="volume-range">
+                            <input type="range" name="volume" id="volume" min="0" max="100"  step="1" value="100"  class="vol-slider" id="volume">
+                        </div>
+            
+                        <div class="current-volume">35</div>
+                    </div>
+                </div>
+
+
+                <div class="playback-image">
+                    <!-- playback image -->
+                    <img id="playback_image">
+
+                    <div id="music_ani_bg">
+                        <canvas id="canvas" width="800" height="350"></canvas>
+                    </div>
+                    
+
+                </div>
+
+                <diV class="song-info">
+                    <h1 id="song_title">Song title</h1>
+                    <span id="artist">Artist</span>
+                </diV>
+
+                <div class="midle">
+                    <div class="time_sec">
+                        <!-- Auto<i class="fas fa-circle-notch"></i> -->
+                        <div id="curent_time">00:00</div>
+                        <div class="play-controol">
+                            <div class="playback-control">
+                                <input type="range" name="playback-control" min="0" max="100" value="0" class="slider" id="track_duration">
+                            </div>
+                        </div>
+                        <div id="duration_time">00:00</div>
+                    </div>
+
+                    <div class="btn-sec">
+                        <div class="unic_btn" id="repet">
+                            <i class="fas fa-redo-alt"></i>
+                        </div>
+                        <div class="play-pause">
+                            <div class="forbac-btn" id="backword_track">
+                                <i class="fas fa-backward"></i>
+                            </div>
+                            <div class="play-btn play" id="play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="forbac-btn" id="forword_track">
+                                <i class="fas fa-forward"></i>
+                            </div>
+                        </div>
+                        <div class="unic_btn auto_active" id="auto_play">
+                            <i class="fas fa-repeat-alt"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- script link -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/music.js"></script>
+</body>
+</html>

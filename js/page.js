@@ -125,6 +125,11 @@ $(function() {
 			
 		}
 
+		//music
+		if($(this).attr('id') == "music"){
+			$(".app-open-body").html("<iframe src='music.html'></iframe>")
+		}
+
 		$(".app_icon_position").css({
 			left : position.left + "px",
 			top: position.top + "px"
