@@ -1,16 +1,16 @@
 # Android_Css
 
-Live Priview : https://androidcss.netlify.app/
-Project Name: Android by html css.
-Using : Html, Css, Fonawesome, Js & Jquary.
+Live Priview : https://androidcss.netlify.app/</br>
+Project Name: Android by html css.<br>
+Using : Html, Css, Fonawesome, Js & Jquary.<br>
 
 find me on:-
-facebook :- https://web.facebook.com/TahirAhmad01/
-twitter:- https://twitter.com/tahir_ahmad01
-instagram :- https://www.instagram.com/tahir_ahmad01/
-github :- https://github.com/TahirAhmad01/
-codepen:- https://codepen.io/TahirAhmad/
-linkdin:- https://www.linkedin.com/in/tahir-ahmad-7145a01b3/
+facebook :- https://web.facebook.com/TahirAhmad01/ </br>
+twitter:- https://twitter.com/tahir_ahmad01 </br>
+instagram :- https://www.instagram.com/tahir_ahmad01/ </br>
+github :- https://github.com/TahirAhmad01/ </br>
+codepen:- https://codepen.io/TahirAhmad/ </br>
+linkdin:- https://www.linkedin.com/in/tahir-ahmad-7145a01b3/ </br>
 
 <a href="https://codepen.io/tahirahmad">
   <img align="right" alt="Tahir Ahmad | Codepen" width="21px" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codepen.svg" alt="tahirahmad" />
