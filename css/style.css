@@ -40,7 +40,17 @@ body {
   position: relative;
 }
 
-@keyframes open {
+/* @keyframes open {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+} */
+
+@keyframes close {
   0% {
     opacity: 1;
   }
@@ -52,21 +62,25 @@ body {
   100% {
     opacity: 0;
   }
+
+  /* 100% {
+      opacity: 0;
+    } */
 }
 
 @keyframes fade_image {
   0% {
     opacity: 0;
   }
-  20% {
+  100% {
     opacity: 1;
   }
-  80% {
+  /* 80% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-  }
+  } */
 }
 
 .loader {
@@ -75,22 +89,27 @@ body {
   width: calc(102% + 2px);
   top: -2px;
   left: -2px;
-  opacity: 0;
+  opacity: 1;
   z-index: 99;
   padding: 0 20px;
   background-color: #000;
-  animation: open linear 3ss;
-  -webkit-animation: open linear 3s;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: open linear 1.5s;
+  -webkit-animation: open linear 3s;
+}
+
+.close_animation {
+  animation: close linear 1.5s;
+  -webkit-animation: close linear 1.5s;
 }
 
 .loader-image {
   margin: 0 auto;
-  animation: fade_image linear 2.5s;
-  -webkit-animation: fade_image linear 2.5s;
-  opacity: 0;
+  animation: fade_image linear 1.5s;
+  -webkit-animation: fade_image linear 1.5s;
+  opacity: 1;
 }
 
 .loader-image > div:nth-child(2) {

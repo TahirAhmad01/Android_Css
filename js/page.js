@@ -62,8 +62,13 @@ $(".item").css({
 // }, 3000);
 
 $(document).ready(
+  //
   setTimeout(function () {
-    $(".loader").fadeOut(2900, function () {
+    $(".loader").fadeOut(2500, function () {
+      $$("#loadImg").addClass("close_animation");
+    });
+    $(".loader").fadeOut(3000, function () {
+      ".loader".addClass("close_animation");
       $(this).remove();
     });
   })
@@ -81,7 +86,7 @@ $(".app-open-body").on("click", function () {
 });
 
 $(".items-inner div div").on("click", function () {
-  var position = $(this).position();
+  const position = $(this).position();
 
   $(".content-loader-div").css({
     display: "block",
