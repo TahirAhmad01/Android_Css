@@ -1,197 +1,211 @@
-$(function() {
-	function clock() {
-		var time = new Date(),
-			hour = time.getHours(),
-			min = time.getMinutes(),
-			sec = time.getSeconds(),
-			day = time.getDay(),
-			year = time.getFullYear(),
-			date = time.getDate();
-	
-		var mnth = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'],
-			month = mnth[time.getMonth()];
-	
-		var	weekday = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'],
-			week = weekday[time.getDay()];
-		
-		
-		// 24hr to 12hr
-		if (hour > 12) {
-			hour = hour - 12
-		}
+"use strict";
 
-		// 0 to 12
-		if (hour == 0) {
-			hour = 12;
-		}
-		 if (min < 10) {
-			var min = '0' + min;
-		 }
-	
-		$(".hour").text(hour);
-		$(".minute").text(min);
-		$(".second").text(sec);
-		$(".day").text(week);
-		$(".month").text(month);
-		$(".date").text(date);
-	}
+function clock() {
+  var time = new Date(),
+    hour = time.getHours(),
+    min = time.getMinutes(),
+    sec = time.getSeconds(),
+    day = time.getDay(),
+    year = time.getFullYear(),
+    date = time.getDate();
 
-	setInterval(clock, 100);
+  var mnth = [
+      "jan",
+      "feb",
+      "mar",
+      "apr",
+      "may",
+      "jun",
+      "jul",
+      "aug",
+      "sep",
+      "oct",
+      "nov",
+      "dec",
+    ],
+    month = mnth[time.getMonth()];
 
-	var height = $(".middle_body").height() - 80;
+  var weekday = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"],
+    week = weekday[time.getDay()];
 
-	$(".item").css({
-		height : height + "px"
-	});
+  // 24hr to 12hr
+  if (hour > 12) {
+    hour = hour - 12;
+  }
 
-    setTimeout(function(){
-		$(".loader").css({'z-index':'0', 'display' : 'none'}); 
-	},3000);
+  // 0 to 12
+  if (hour == 0) {
+    hour = 12;
+  }
+  if (min < 10) {
+    var min = "0" + min;
+  }
 
-	var owl = $('.owl-carousel');
-	owl.owlCarousel({
-		margin: 0,
-		loop: true,
-		items: 1
-	});
+  $(".hour").text(hour);
+  $(".minute").text(min);
+  $(".second").text(sec);
+  $(".day").text(week);
+  $(".month").text(month);
+  $(".date").text(date);
+}
 
-	$(".app-open-body").on("click", function(){
-		$(this).addClass("item_ready")
-	})
+setInterval(clock, 100);
 
-	$(".items-inner div div").on("click", function(){
-		var position = $(this).position();
+var height = $(".middle_body").height() - 80;
 
-		$(".content-loader-div").css({
-			display : "block"
-		})
-		
-		setTimeout(function (){
-			$(".app-open-body").trigger("click");
-		},20)
+$(".item").css({
+  height: height + "px",
+});
 
-		$(".app-open-body").addClass("app_icon_position");
+// setTimeout(function () {
+//   $(".loader").css({ "z-index": "0", display: "none" });
+// }, 3000);
 
-		//call window opwn
-		if($(this).attr('id') == "call"){
-			$(".app-open-body").html("<iframe src='call.html'></iframe>");
-		}
+$(document).ready(function () {
+  $(".loader").css({ "z-index": "0", display: "none" });
+});
 
-		//contact window opwn
-		if($(this).attr('id') == "contact"){
-			$(".app-open-body").html("<iframe src='contact.html'></iframe>");
-		}
+var owl = $(".owl-carousel");
+owl.owlCarousel({
+  margin: 0,
+  loop: true,
+  items: 1,
+});
 
-		//message window opwn
-		if($(this).attr('id') == "message"){
-			$(".app-open-body").html("<iframe src='message.html'></iframe>");
-		}
+$(".app-open-body").on("click", function () {
+  $(this).addClass("item_ready");
+});
 
-		//message window opwn
-		if($(this).attr('id') == "setting"){
-			$(".app-open-body").html("<iframe src='setting.html'></iframe>");
-		}
+$(".items-inner div div").on("click", function () {
+  var position = $(this).position();
 
-		//cute window opwn
-		if($(this).attr('id') == "cute"){
-			$(".app-open-body").html("<iframe src='https://dooplays.xyz/'></iframe>");
-		}
+  $(".content-loader-div").css({
+    display: "block",
+  });
 
-		//calculator window opwn
-		if($(this).attr('id') == "calc"){
-			$(".app-open-body").html("<iframe src='calculator.html'></iframe>");
-		}
+  setTimeout(function () {
+    $(".app-open-body").trigger("click");
+  }, 20);
 
-		//fast window opwn
-		if($(this).attr('id') == "fast"){
-			$(".app-open-body").html("<iframe src='https://fast.com/'></iframe>");
-		}
+  $(".app-open-body").addClass("app_icon_position");
 
-		//chess
-		if($(this).attr('id') == "chess"){
-			$(".app-open-body").html("<iframe src='chess.html'></iframe>");
-		}
+  //call window opwn
+  if ($(this).attr("id") == "call") {
+    $(".app-open-body").html("<iframe src='call.html'></iframe>");
+  }
 
-		//horse run
-		if($(this).attr('id') == "horse"){
-			$(".app-open-body").html("<iframe src='horse_run.html'></iframe>");
-		}
+  //contact window opwn
+  if ($(this).attr("id") == "contact") {
+    $(".app-open-body").html("<iframe src='contact.html'></iframe>");
+  }
 
-		//golden
-		if($(this).attr('id') == "golden"){
-			setTimeout(function(){
-				$(".app-open-body").html("<iframe src='golden/index.html'></iframe>")
-			}, 400)
-			
-		}
+  //message window opwn
+  if ($(this).attr("id") == "message") {
+    $(".app-open-body").html("<iframe src='message.html'></iframe>");
+  }
 
-		//music
-		if($(this).attr('id') == "music"){
-			$(".app-open-body").html("<iframe src='music.html'></iframe>")
-		}
+  //message window opwn
+  if ($(this).attr("id") == "setting") {
+    $(".app-open-body").html("<iframe src='setting.html'></iframe>");
+  }
 
-		$(".app_icon_position").css({
-			left : position.left + "px",
-			top: position.top + "px"
-		})
+  //cute window opwn
+  if ($(this).attr("id") == "cute") {
+    $(".app-open-body").html("<iframe src='https://dooplays.xyz/'></iframe>");
+  }
 
-		$(".notification-bar").css({
-			"background-color" : "#fff",
-			"transition" : ".5s",
-			"color" : "#000"
-		})
+  //calculator window opwn
+  if ($(this).attr("id") == "calc") {
+    $(".app-open-body").html("<iframe src='calculator.html'></iframe>");
+  }
 
-		$(".notification-bar i").css({
-			color : "#000"
-		})
+  //fast window opwn
+  if ($(this).attr("id") == "fast") {
+    $(".app-open-body").html("<iframe src='https://fast.com/'></iframe>");
+  }
 
-		$(".navigation-button").css({
-			"color" : "#000",
-			"background-color" : "#fff",
-			"transition" : ".5s"
-		})
+  //chess
+  if ($(this).attr("id") == "chess") {
+    $(".app-open-body").html("<iframe src='chess.html'></iframe>");
+  }
 
-		$(".back").addClass("enable");
-		
-	});
+  //horse run
+  if ($(this).attr("id") == "horse") {
+    $(".app-open-body").html("<iframe src='horse_run.html'></iframe>");
+  }
 
-	$(".back").on("click" ,function(){
-		if (!$(this).hasClass("enable")){
-			return;
-		}
+  //golden
+  if ($(this).attr("id") == "golden") {
+    setTimeout(function () {
+      $(".app-open-body").html("<iframe src='golden/index.html'></iframe>");
+    }, 400);
+  }
 
-		$(".app-open-body").removeClass("item_ready");
-		$(".app-open-body").addClass("conveter");
-		$(".app-open-body").addClass("window_close");
+  //music
+  if ($(this).attr("id") == "music") {
+    $(".app-open-body").html("<iframe src='music.html'></iframe>");
+  }
 
-		$(".notification-bar").css({
-			"background-color" : "transparent",
-			"transition" : ".2s ease-in-out",
-			"color" : "#fff"
-		})
+  $(".app_icon_position").css({
+    left: position.left + "px",
+    top: position.top + "px",
+  });
 
-		$(".notification-bar i").css({
-			color : "#fff"
-		})
+  $(".notification-bar").css({
+    "background-color": "#fff",
+    transition: ".5s",
+    color: "#000",
+  });
 
-		$(".navigation-button").css({
-			"color" : "#fff",
-			"background-color" : "transparent",
-			"transition" : ".3s"
-		})
+  $(".notification-bar i").css({
+    color: "#000",
+  });
 
-		$(".app-open-body iframe").remove();
+  $(".navigation-button").css({
+    color: "#000",
+    "background-color": "#fff",
+    transition: ".5s",
+  });
 
-		$(this).removeClass("enable")
-	
-		setTimeout(function(){
-			$(".content-loader-div").removeAttr('style');
-			$(".app-open-body").removeClass("conveter");
-			$(".app-open-body").removeClass("window_close");
-			$(".app-open-body").removeAttr("style");
-			$(".notification-bar").removeAttr("style");
-			$(".notification-bar i").removeAttr("style");
-			$(".navigation-button").removeAttr("style");
-		}, 400)
-	})
+  $(".back").addClass("enable");
+});
+
+$(".back").on("click", function () {
+  if (!$(this).hasClass("enable")) {
+    return;
+  }
+
+  $(".app-open-body").removeClass("item_ready");
+  $(".app-open-body").addClass("conveter");
+  $(".app-open-body").addClass("window_close");
+
+  $(".notification-bar").css({
+    "background-color": "transparent",
+    transition: ".2s ease-in-out",
+    color: "#fff",
+  });
+
+  $(".notification-bar i").css({
+    color: "#fff",
+  });
+
+  $(".navigation-button").css({
+    color: "#fff",
+    "background-color": "transparent",
+    transition: ".3s",
+  });
+
+  $(".app-open-body iframe").remove();
+
+  $(this).removeClass("enable");
+
+  setTimeout(function () {
+    $(".content-loader-div").removeAttr("style");
+    $(".app-open-body").removeClass("conveter");
+    $(".app-open-body").removeClass("window_close");
+    $(".app-open-body").removeAttr("style");
+    $(".notification-bar").removeAttr("style");
+    $(".notification-bar i").removeAttr("style");
+    $(".navigation-button").removeAttr("style");
+  }, 400);
 });
