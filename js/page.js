@@ -61,9 +61,11 @@ $(".item").css({
 //   $(".loader").css({ "z-index": "0", display: "none" });
 // }, 3000);
 
-$(document).ready(function () {
-  $(".loader").css({ "z-index": "0", display: "none" });
-});
+$(document).ready(
+  setTimeout(function () {
+    $(".loader").css({ "z-index": "0", display: "none" });
+  }, 2000)
+);
 
 var owl = $(".owl-carousel");
 owl.owlCarousel({
