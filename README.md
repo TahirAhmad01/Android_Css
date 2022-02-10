@@ -1,6 +1,7 @@
 # Android_Css
 
-Android mobile design by HTML, CSS. Using: Html, Css, Fonawesome, Js & Jquery.
+Android mobile design by HTML, CSS. </br>
+Using: Html, Css, FontAwesome, Js & Jquery.</br>
 
 ## Connect with me
 
@@ -12,14 +13,14 @@ Android mobile design by HTML, CSS. Using: Html, Css, Fonawesome, Js & Jquery.
   <a href="https://instagram.com/tahir_ahmad01" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="tahir_ahmad01" height="30" width="40" /></a>
 </p>
 
-find me on:-
+## find me on: -
 
-facebook :- https://web.facebook.com/TahirAhmad01/
-twitter:- https://twitter.com/tahir_ahmad01
-instagram :- https://www.instagram.com/tahir_ahmad01/
-github :- https://github.com/TahirAhmad01/
-codepen:- https://codepen.io/TahirAhmad/
-linkdin:- https://www.linkedin.com/in/tahir-ahmad-7145a01b3/
+Facebook :- https://web.facebook.com/TahirAhmad01/ </br>
+twitter:- https://twitter.com/tahir_ahmad01 </br>
+instagram :- https://www.instagram.com/tahir_ahmad01/ </br>
+github :- https://github.com/TahirAhmad01/ </br>
+codepen:- https://codepen.io/TahirAhmad/ </br>
+linkdin:- https://www.linkedin.com/in/tahir-ahmad-7145a01b3/ </br>
 
 <a href="https://codepen.io/tahirahmad">
   <img align="right" alt="Tahir Ahmad | Codepen" width="21px" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codepen.svg" alt="tahirahmad" />

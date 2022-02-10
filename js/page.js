@@ -63,8 +63,10 @@ $(".item").css({
 
 $(document).ready(
   setTimeout(function () {
-    $(".loader").css({ "z-index": "0", display: "none" });
-  }, 2000)
+    $(".loader").fadeOut(2900, function () {
+      $(this).remove();
+    });
+  })
 );
 
 var owl = $(".owl-carousel");
