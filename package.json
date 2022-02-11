@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/TahirAhmad01/Android_Css/issues"
   },
-  "homepage": "https://github.com/TahirAhmad01/Android_Css/"
+  "homepage": "https://github.com/TahirAhmad01/Android_Css/",
+  "dependencies": {
+    "google-assistant": "^0.7.0"
+  }
 }
