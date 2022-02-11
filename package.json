@@ -1,5 +1,5 @@
 {
-  "name": "Android-Css",
+  "name": "android_css",
   "version": "2.0.0",
   "description": "Android mobile design by HTML, CSS. </br>\r Using: Html, Css, FontAwesome, Js & Jquery.</br>",
   "main": "index.js",
@@ -17,7 +17,7 @@
     "android",
     "android css"
   ],
-  "author": "Tahir Ahmad",
+  "author": "tahir_ahmad",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TahirAhmad01/Android_Css/issues"
