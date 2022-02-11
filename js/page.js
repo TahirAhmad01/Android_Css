@@ -64,11 +64,11 @@ $(".item").css({
 $(document).ready(
   //
   setTimeout(function () {
-    $(".loader").fadeOut(2500, function () {
-      $$("#loadImg").addClass("close_animation");
+    $("#loadImg").fadeOut(1500, function () {
+      $(this).addClass("close_animation");
     });
-    $(".loader").fadeOut(3000, function () {
-      ".loader".addClass("close_animation");
+    $(".loader").fadeOut(4000, function () {
+      $(this).addClass("close_animation");
       $(this).remove();
     });
   })
@@ -99,23 +99,23 @@ $(".items-inner div div").on("click", function () {
   $(".app-open-body").addClass("app_icon_position");
 
   //call window opwn
-  if ($(this).attr("id") == "call") {
-    $(".app-open-body").html("<iframe src='call.html'></iframe>");
+  if ($(this).attr("id") === "call") {
+    $(".app-open-body").html("<iframe src='apps/call.html'></iframe>");
   }
 
   //contact window opwn
-  if ($(this).attr("id") == "contact") {
-    $(".app-open-body").html("<iframe src='contact.html'></iframe>");
+  if ($(this).attr("id") === "contact") {
+    $(".app-open-body").html("<iframe src='apps/contact.html'></iframe>");
   }
 
   //message window opwn
-  if ($(this).attr("id") == "message") {
-    $(".app-open-body").html("<iframe src='message.html'></iframe>");
+  if ($(this).attr("id") === "message") {
+    $(".app-open-body").html("<iframe src='apps/message.html'></iframe>");
   }
 
   //message window opwn
-  if ($(this).attr("id") == "setting") {
-    $(".app-open-body").html("<iframe src='setting.html'></iframe>");
+  if ($(this).attr("id") === "setting") {
+    $(".app-open-body").html("<iframe src='apps/setting.html'></iframe>");
   }
 
   //cute window opwn
@@ -124,35 +124,44 @@ $(".items-inner div div").on("click", function () {
   }
 
   //calculator window opwn
-  if ($(this).attr("id") == "calc") {
-    $(".app-open-body").html("<iframe src='calculator.html'></iframe>");
+  if ($(this).attr("id") === "calc") {
+    $(".app-open-body").html("<iframe src='apps/calculator.html'></iframe>");
   }
 
   //fast window opwn
-  if ($(this).attr("id") == "fast") {
+  if ($(this).attr("id") === "fast") {
     $(".app-open-body").html("<iframe src='https://fast.com/'></iframe>");
   }
 
   //chess
-  if ($(this).attr("id") == "chess") {
-    $(".app-open-body").html("<iframe src='chess.html'></iframe>");
+  if ($(this).attr("id") === "chess") {
+    $(".app-open-body").html("<iframe src='apps/chess.html'></iframe>");
   }
 
   //horse run
-  if ($(this).attr("id") == "horse") {
-    $(".app-open-body").html("<iframe src='horse_run.html'></iframe>");
+  if ($(this).attr("id") === "horse") {
+    $(".app-open-body").html("<iframe src='apps/horse_run.html'></iframe>");
   }
 
   //golden
-  if ($(this).attr("id") == "golden") {
+  if ($(this).attr("id") === "golden") {
     setTimeout(function () {
       $(".app-open-body").html("<iframe src='golden/index.html'></iframe>");
     }, 400);
   }
 
   //music
-  if ($(this).attr("id") == "music") {
-    $(".app-open-body").html("<iframe src='music.html'></iframe>");
+  if ($(this).attr("id") === "music") {
+    $(".app-open-body").html("<iframe src='apps/music.html'></iframe>");
+  }
+
+  if ($(this).attr("id") === "google") {
+    $(".app-open-body").append(`<ifream>
+    <div class="gcse-searchbox-only"></div>
+      <script async src="https://cse.google.com/cse.js?cx=28096d1e8754a1051"></script>
+    </ifream>
+      
+    `);
   }
 
   $(".app_icon_position").css({
