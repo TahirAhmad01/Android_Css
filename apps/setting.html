@@ -4,20 +4,162 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Settings</title>
     <link rel="stylesheet" href="../fsm/css/all.css" />
     <link rel="stylesheet" href="../css/font.css" />
-    <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="../css/setting.css" />
   </head>
   <body>
-    <div class="c_flex">
-      <div class="title">Settings</div>
-      <div class="no-content">
-        <div class="content_ico">
-          <i class="fa fa-cogs"></i>
+    <div class="settings-container">
+      <!-- Main Settings Menu -->
+      <div class="settings-pane" id="mainSettingsPane">
+        <div class="title-bar">
+          <span class="app-title">Settings</span>
         </div>
-        <div class="notice">Your setting is ok..</div>
+
+        <div class="settings-list">
+          <div class="settings-section">
+            <div class="settings-item" id="navWallpaper">
+              <div class="item-icon bg-blue"><i class="fas fa-image"></i></div>
+              <div class="item-text">
+                <span class="item-title">Wallpaper</span>
+                <span class="item-subtitle">Change background screen style</span>
+              </div>
+              <i class="fas fa-chevron-right chevron"></i>
+            </div>
+            
+            <div class="settings-item-toggle">
+              <div class="item-icon bg-purple"><i class="fas fa-moon"></i></div>
+              <div class="item-text">
+                <span class="item-title">Dark Theme</span>
+                <span class="item-subtitle">Switch between light & dark</span>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="darkModeSwitch">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="settings-section">
+            <div class="settings-item" id="navSpecs">
+              <div class="item-icon bg-green"><i class="fas fa-info-circle"></i></div>
+              <div class="item-text">
+                <span class="item-title">About Phone</span>
+                <span class="item-subtitle">System specs and hardware info</span>
+              </div>
+              <i class="fas fa-chevron-right chevron"></i>
+            </div>
+
+            <div class="settings-item" id="navDeveloper">
+              <div class="item-icon bg-orange"><i class="fas fa-code"></i></div>
+              <div class="item-text">
+                <span class="item-title">Developer</span>
+                <span class="item-subtitle">Find details about Creator</span>
+              </div>
+              <i class="fas fa-chevron-right chevron"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wallpaper Sub-Panel -->
+      <div class="sub-pane" id="paneWallpaper">
+        <div class="sub-header">
+          <button class="sub-back-btn"><i class="fas fa-arrow-left"></i></button>
+          <span class="sub-title">Wallpaper Selection</span>
+        </div>
+        <div class="sub-content">
+          <div class="wallpaper-grid">
+            <div class="wallpaper-card" data-style="linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)">
+              <div class="wp-thumb" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"></div>
+              <span class="wp-label">Light Grey</span>
+            </div>
+            <div class="wallpaper-card" data-style="linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+              <div class="wp-thumb" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"></div>
+              <span class="wp-label">Cosmic Sunset</span>
+            </div>
+            <div class="wallpaper-card" data-style="linear-gradient(135deg, #02aab0 0%, #00cdac 100%)">
+              <div class="wp-thumb" style="background: linear-gradient(135deg, #02aab0 0%, #00cdac 100%)"></div>
+              <span class="wp-label">Aurora Glow</span>
+            </div>
+            <div class="wallpaper-card" data-style="linear-gradient(135deg, #141e30 0%, #243b55 100%)">
+              <div class="wp-thumb" style="background: linear-gradient(135deg, #141e30 0%, #243b55 100%)"></div>
+              <span class="wp-label">Obsidian Night</span>
+            </div>
+            <div class="wallpaper-card" data-style="url('img/bg_img.png')">
+              <div class="wp-thumb" style="background: url('../img/bg_img.png') no-repeat center; background-size: cover;"></div>
+              <span class="wp-label">Retro Gradient</span>
+            </div>
+            <div class="wallpaper-card" data-style="url('img/bg_img1.png')">
+              <div class="wp-thumb" style="background: url('../img/bg_img1.png') no-repeat center; background-size: cover;"></div>
+              <span class="wp-label">Abstract Liquid</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Specs Sub-Panel -->
+      <div class="sub-pane" id="paneSpecs">
+        <div class="sub-header">
+          <button class="sub-back-btn"><i class="fas fa-arrow-left"></i></button>
+          <span class="sub-title">About Phone</span>
+        </div>
+        <div class="sub-content">
+          <div class="device-info-card">
+            <div class="info-logo"><i class="fad fa-mobile-android-alt"></i></div>
+            <h4>Antigravity Pixel</h4>
+            <p>mushOS 14 (Stable)</p>
+          </div>
+          
+          <div class="specs-list">
+            <div class="spec-row">
+              <span class="spec-label">Processor</span>
+              <span class="spec-value">Gemini AI Octa-Core</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">RAM</span>
+              <span class="spec-value">12.00 GB</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Storage</span>
+              <span class="spec-value">512 GB (NVMe)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Battery Health</span>
+              <span class="spec-value">100% (Excellent)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Display Specs</span>
+              <span class="spec-value">1080 x 2400 AMOLED 120Hz</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Developer Sub-Panel -->
+      <div class="sub-pane" id="paneDeveloper">
+        <div class="sub-header">
+          <button class="sub-back-btn"><i class="fas fa-arrow-left"></i></button>
+          <span class="sub-title">Developer Details</span>
+        </div>
+        <div class="sub-content developer-profile text-center">
+          <div class="dev-avatar">TA</div>
+          <h3>Tahir Ahmad</h3>
+          <p class="dev-tag">Designer & Developer</p>
+          <p class="dev-bio">Designing top-tier interactive web frameworks, sleek interface simulations, and front-end engineering.</p>
+          
+          <div class="dev-socials">
+            <a href="https://github.com/TahirAhmad01/" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://web.facebook.com/TahirAhmad01/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/tahir_ahmad01" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/tahir-ahmad-7145a01b3/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
       </div>
     </div>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/setting.js"></script>
   </body>
 </html>

@@ -4,20 +4,91 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Contacts</title>
     <link rel="stylesheet" href="../fsm/css/all.css" />
     <link rel="stylesheet" href="../css/font.css" />
     <link rel="stylesheet" href="../css/contact.css" />
   </head>
   <body>
     <div class="c_flex">
-      <div class="title">Contacts</div>
-      <div class="no-content">
-        <div class="content_ico">
-          <i class="far fa-book-open"></i>
+      <div class="title-bar">
+        <span class="app-title">Contacts</span>
+        <button class="add-contact-btn" id="openAddModalBtn"><i class="fas fa-plus"></i></button>
+      </div>
+
+      <div class="search-container">
+        <div class="search-box">
+          <i class="far fa-search search-icon"></i>
+          <input type="text" id="contactSearch" placeholder="Search contacts..." />
         </div>
-        <div class="notice">You have no contacts.. yet!!</div>
+      </div>
+
+      <div class="contacts-scroll-area">
+        <div class="contacts-list" id="contactsList">
+          <!-- Contacts dynamically inserted here -->
+        </div>
+
+        <div class="no-content" id="noContactsNotice" style="display: none;">
+          <div class="content_ico">
+            <i class="far fa-book-open"></i>
+          </div>
+          <div class="notice">No contacts found</div>
+        </div>
       </div>
     </div>
+
+    <!-- Contact Detail Modal -->
+    <div class="modal" id="contactDetailModal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content detail-card">
+        <button class="close-modal-btn" id="closeDetailBtn">&times;</button>
+        <div class="avatar-large" id="detailAvatar">T</div>
+        <h2 class="detail-name" id="detailName">Tahir Ahmad</h2>
+        <p class="detail-phone" id="detailPhone">01700000000</p>
+        <p class="detail-email" id="detailEmail">tahir@example.com</p>
+        
+        <div class="contact-actions">
+          <button class="action-btn call-action" id="detailCallAction">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call</span>
+          </button>
+          <button class="action-btn message-action" id="detailMessageAction">
+            <i class="fas fa-comment-alt"></i>
+            <span>Message</span>
+          </button>
+          <button class="action-btn delete-action" id="detailDeleteAction">
+            <i class="fas fa-trash-alt"></i>
+            <span>Delete</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add/Edit Contact Modal -->
+    <div class="modal" id="addContactModal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content form-card">
+        <button class="close-modal-btn" id="closeAddBtn">&times;</button>
+        <h3 class="form-title">New Contact</h3>
+        <form id="contactForm" onsubmit="return false;">
+          <div class="form-group">
+            <label for="inputName">Name</label>
+            <input type="text" id="inputName" required placeholder="Full Name" />
+          </div>
+          <div class="form-group">
+            <label for="inputPhone">Phone Number</label>
+            <input type="tel" id="inputPhone" required placeholder="Phone Number" />
+          </div>
+          <div class="form-group">
+            <label for="inputEmail">Email Address</label>
+            <input type="email" id="inputEmail" placeholder="Email Address (Optional)" />
+          </div>
+          <button type="submit" class="submit-btn" id="saveContactBtn">Save Contact</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/contact.js"></script>
   </body>
 </html>

@@ -1,101 +1,364 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    font-family: "Roboto";
-    overflow: hidden;
+body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  background-color: #f7f9fa;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.dialer-body{
-    height: 100%;
-    width: 100%;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
 }
 
-.dialer-body > div:nth-child(1){
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+.dialer-body {
+  height: 100%;
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
-.dialer-body > div:nth-child(1) > div:nth-child(1){
-    flex-grow: 1;
+/* Suggestions Container */
+.suggestions-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.dial-number > div{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 60px;
+.suggested-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.dial-number > div > div{
-    height: 50px;
-    width: 50px;
-    padding: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+body.dark-mode .suggested-item {
+  background: #1a1a1a;
+  border-color: #2a2a2a;
 }
 
-.dial-number > div > div:active{
-    background-color: #ccc;
+.suggested-item:active {
+  transform: scale(0.98);
+  background: #f2f2f7;
 }
 
-.number-show{
-    text-align: center;
+body.dark-mode .suggested-item:active {
+  background: #2c2c2e;
 }
 
-.number{
-    font-size: 22px;
-    display: flex;
-    padding: 22px;
+.suggested-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 13px;
+  margin-right: 12px;
+  text-transform: uppercase;
 }
 
-.number div:nth-child(1){
-    flex-grow: 1;
-    width: calc(100% - 50px);
-    overflow-x: scroll;
-    margin: 0 10px;
-    white-space: nowrap;
-    scrollbar-color: white white;
-    scrollbar-width: thin;
+.suggested-info {
+  display: flex;
+  flex-direction: column;
 }
 
-.number div:nth-child(1)::-webkit-scrollbar {
-    display: none;
-    width: 0px;
+.suggested-name {
+  font-size: 13px;
+  font-weight: 500;
 }
 
-
-.number i{
-    font-size: 17px;
+.suggested-phone {
+  font-size: 11px;
+  color: #8e8e93;
 }
 
-.call-ico{
-    background-color: green !important;
-    color: #fff;
-    border: none !important;
+/* Dialer Numbers bar */
+.number-show {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
-.call-ico:active{
-    background-color: red !important;
+.number {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 8px;
+  border-bottom: 1px solid #e5e5ea;
+  margin-bottom: 15px;
+}
+
+body.dark-mode .number {
+  border-bottom-color: #2c2c2e;
+}
+
+#num_text {
+  flex-grow: 1;
+  width: calc(100% - 40px);
+  overflow-x: auto;
+  white-space: nowrap;
+  text-align: center;
+}
+
+#num_text::-webkit-scrollbar {
+  display: none;
+}
+
+.cut_number {
+  color: #8e8e93;
+  cursor: pointer;
+  padding: 6px;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.cut_number:active {
+  color: #333;
+}
+
+body.dark-mode .cut_number:active {
+  color: #fff;
+}
+
+/* Keypad Grid */
+.dial-number {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.dial-number > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dial-number .c_num {
+  height: 52px;
+  width: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e5e5ea;
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+
+body.dark-mode .dial-number .c_num {
+  border-color: #2c2c2e;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.dial-number .c_num:active {
+  transform: scale(0.9);
+  background-color: #e5e5ea;
+}
+
+body.dark-mode .dial-number .c_num:active {
+  background-color: #2c2c2e;
+}
+
+.call-ico {
+  background-color: #34c759 !important;
+  color: #fff;
+  border: none !important;
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.call-ico:active {
+  transform: scale(0.9);
+  background-color: #248a3d !important;
+}
+
+/* Full Screen Call Overlay */
+.call-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #1d2b3a, #0f171e);
+  z-index: 10000;
+  display: none;
+  flex-direction: column;
+  padding: 24px;
+  color: #fff;
+  animation: slideUpCall 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+@keyframes slideUpCall {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.call-header {
+  height: 30px;
+  text-align: center;
+}
+
+.call-security-badge {
+  font-size: 10px;
+  opacity: 0.6;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.call-recipient {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.call-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #007aff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+}
+
+#callRecipientName {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+#callRecipientNumber {
+  font-size: 13px;
+  opacity: 0.6;
+  margin-bottom: 12px;
+}
+
+.call-status {
+  font-size: 14px;
+  font-weight: 300;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  animation: flashStatus 1.5s infinite alternate;
+}
+
+@keyframes flashStatus {
+  0% { opacity: 0.4; }
+  100% { opacity: 0.9; }
+}
+
+.call-timer {
+  font-size: 16px;
+  font-weight: 300;
+  display: none; /* Shown only when connected */
+}
+
+/* Call Actions buttons */
+.call-action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 40px;
+  padding: 0 10px;
+}
+
+.call-action-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 12px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.call-action-btn.active {
+  background: #fff;
+  color: #121212;
+}
+
+.call-action-btn i {
+  font-size: 18px;
+}
+
+.call-action-btn span {
+  font-size: 10px;
+  opacity: 0.9;
+}
+
+.hangup-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.hangup-btn {
+  width: 56px;
+  height: 56px;
+  background-color: #ff3b30;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: rotate(135deg); /* Standard red phone angle */
+  box-shadow: 0 4px 15px rgba(255, 59, 48, 0.35);
+  transition: all 0.2s;
+}
+
+.hangup-btn:active {
+  transform: rotate(135deg) scale(0.9);
+  background-color: #d62c23;
 }

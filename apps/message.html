@@ -4,20 +4,75 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Messages</title>
     <link rel="stylesheet" href="../fsm/css/all.css" />
     <link rel="stylesheet" href="../css/font.css" />
-    <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="../css/message.css" />
   </head>
   <body>
-    <div class="c_flex">
-      <div class="title">Messages</div>
-      <div class="no-content">
-        <div class="content_ico">
-          <i class="fa fa-envelope-open-text"></i>
+    <div class="msg-container">
+      <!-- Conversation List View -->
+      <div class="pane" id="conversationsPane">
+        <div class="title-bar">
+          <span class="app-title">Messages</span>
+          <button class="new-msg-btn" id="openContactsListBtn"><i class="fas fa-edit"></i></button>
         </div>
-        <div class="notice">You have no messages.. yet!!</div>
+
+        <div class="thread-list-area">
+          <div class="thread-list" id="threadList">
+            <!-- Threads inserted dynamically -->
+          </div>
+          
+          <div class="no-content" id="noThreadsNotice" style="display: none;">
+            <div class="content_ico">
+              <i class="fad fa-envelope-open-text"></i>
+            </div>
+            <div class="notice">No conversations yet</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Select Contact Modal Pane -->
+      <div class="pane-overlay" id="contactsSelectOverlay">
+        <div class="select-pane">
+          <div class="select-header">
+            <h3>New Message</h3>
+            <button class="close-select-btn" id="closeSelectBtn">&times;</button>
+          </div>
+          <div class="select-search">
+            <input type="text" id="selectSearchInput" placeholder="Search contacts..." />
+          </div>
+          <div class="select-contacts-list" id="selectContactsList">
+            <!-- Contacts listing -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Screen Panel -->
+      <div class="chat-screen" id="chatScreen">
+        <div class="chat-header">
+          <button class="chat-back-btn" id="chatBackBtn"><i class="fas fa-chevron-left"></i></button>
+          <div class="chat-header-info">
+            <div class="chat-avatar" id="chatHeaderAvatar">?</div>
+            <div class="chat-name-status">
+              <span class="chat-recipient-name" id="chatHeaderName">Contact Name</span>
+              <span class="chat-recipient-status" id="chatHeaderStatus">Online</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+          <!-- Chat bubbles dynamic -->
+        </div>
+
+        <div class="chat-input-bar">
+          <input type="text" id="chatMessageInput" placeholder="Type a message..." autocomplete="off" />
+          <button id="sendBtn" class="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
       </div>
     </div>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/message.js"></script>
   </body>
 </html>

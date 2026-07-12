@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dialer</title>
+    <title>Dialer</title>
     <link rel="stylesheet" href="../fsm/css/all.css">
     <link rel="stylesheet" href="../css/font.css">
     <link rel="stylesheet" href="../css/call.css">
 </head>
 <body>
     <div class="dialer-body">
+        <div class="suggestions-container" id="suggestionsContainer">
+            <!-- Dynamic contact suggestions will show here -->
+        </div>
 
         <div class="number-show">
-            <div></div>
+            <div class="fill"></div>
             <div class="number">
                 <div id="num_text">
                     <span></span>
@@ -43,12 +46,46 @@
                 <div class="c_num">0</div>
                 <div class="c_num">#</div>
             </div>
-
             <div>
                 <span></span>
-                <div class="call-ico"><i class="fa fa-phone-alt"></i></div>
+                <div class="call-ico" id="callButton"><i class="fa fa-phone-alt"></i></div>
                 <span></span>
-            </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Screen Call Overlay -->
+    <div class="call-overlay" id="callOverlay">
+        <div class="call-header">
+            <div class="call-security-badge"><i class="fas fa-lock"></i> End-to-end encrypted</div>
+        </div>
+        <div class="call-recipient">
+            <div class="call-avatar" id="callAvatar">?</div>
+            <h2 id="callRecipientName">Unknown</h2>
+            <p id="callRecipientNumber">01700000000</p>
+            <p class="call-status" id="callStatusText">Dialing...</p>
+            <div class="call-timer" id="callTimer">00:00</div>
+        </div>
+        
+        <div class="call-action-grid">
+            <button class="call-action-btn" id="btnMute">
+                <i class="fad fa-microphone-slash"></i>
+                <span>Mute</span>
+            </button>
+            <button class="call-action-btn" id="btnSpeaker">
+                <i class="fad fa-volume-up"></i>
+                <span>Speaker</span>
+            </button>
+            <button class="call-action-btn" id="btnHold">
+                <i class="fad fa-pause"></i>
+                <span>Hold</span>
+            </button>
+        </div>
+
+        <div class="hangup-container">
+            <button class="hangup-btn" id="hangupBtn">
+                <i class="fa fa-phone-alt"></i>
+            </button>
         </div>
     </div>
 

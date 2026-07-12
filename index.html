@@ -24,35 +24,99 @@
         linkdin:- https://www.linkedin.com/in/tahir-ahmad-7145a01b3/
     -->
 
-    <div class="mobile-freame-size">
-        <div class="loader">
-            <div class="loader-image" id="loadImg">
-                <div>
-                    <img src="img/oppo_logo.jpg" alt="logo">
-                </div>
-                <div>
-                    <img src="img/powerd_by.png" alt="android_logo">
+    <div class="phone-wrapper">
+        <div class="physical-btn power-btn" id="physicalPowerBtn"></div>
+        <div class="physical-btn vol-btn vol-up-btn" id="physicalVolUpBtn"></div>
+        <div class="physical-btn vol-btn vol-down-btn" id="physicalVolDownBtn"></div>
+
+        <div class="mobile-freame-size">
+            <div class="screen-brightness-overlay" id="brightnessOverlay"></div>
+            <div class="screen-sleep-overlay" id="sleepOverlay">
+                <div class="lock-screen-content">
+                    <div class="lock-time"><span class="hour"></span>:<span class="minute"></span></div>
+                    <div class="lock-date"><span class="day"></span>, <span class="month"></span> <span class="date"></span></div>
+                    <div class="lock-tip"><i class="fal fa-chevron-double-up animate-swipe"></i> Click / Press Power to unlock</div>
                 </div>
             </div>
-        </div>
-        <div class="body-flex">
-            <div class="notification-bar">
-                <div class="notification_flex">
-                    <div class="left-notification">
-                        <div class="f_cam">
-                            <img src="img/front-cam.png" alt="camera">
+
+            <!-- Control Center Dropdown -->
+            <div class="control-center" id="controlCenter">
+                <div class="cc-handle"></div>
+                <div class="cc-header">
+                    <div class="cc-time"><span class="hour"></span>:<span class="minute"></span></div>
+                    <div class="cc-battery-percentage"><i class="fad fa-battery-bolt"></i> <span id="ccBatteryPercent">100%</span></div>
+                </div>
+                <div class="cc-tiles">
+                    <div class="cc-tile active" id="ccWifi">
+                        <div class="cc-tile-icon"><i class="fad fa-wifi"></i></div>
+                        <div class="cc-tile-label">Wi-Fi</div>
+                    </div>
+                    <div class="cc-tile active" id="ccBluetooth">
+                        <div class="cc-tile-icon"><i class="fad fa-bluetooth"></i></div>
+                        <div class="cc-tile-label">Bluetooth</div>
+                    </div>
+                    <div class="cc-tile" id="ccDarkMode">
+                        <div class="cc-tile-icon"><i class="fad fa-moon"></i></div>
+                        <div class="cc-tile-label">Dark Theme</div>
+                    </div>
+                    <div class="cc-tile" id="ccFlashlight">
+                        <div class="cc-tile-icon"><i class="fad fa-flashlight"></i></div>
+                        <div class="cc-tile-label">Flashlight</div>
+                    </div>
+                </div>
+                <div class="cc-sliders">
+                    <div class="cc-slider-row">
+                        <i class="fad fa-sun"></i>
+                        <input type="range" id="ccBrightness" min="20" max="100" value="100">
+                    </div>
+                    <div class="cc-slider-row">
+                        <i class="fad fa-volume-up" id="ccVolumeIcon"></i>
+                        <input type="range" id="ccVolume" min="0" max="100" value="70">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Volume HUD overlay -->
+            <div class="volume-hud" id="volumeHud">
+                <div class="volume-hud-bar">
+                    <div class="volume-hud-level" id="volumeHudLevel" style="height: 70%;"></div>
+                </div>
+                <i class="fad fa-volume-up" id="volumeHudIcon"></i>
+            </div>
+
+            <!-- Flashlight beam representation -->
+            <div class="flashlight-beam" id="flashlightBeam"></div>
+
+            <div class="loader">
+                <div class="loader-image" id="loadImg">
+                    <div>
+                        <img src="img/oppo_logo.jpg" alt="logo">
+                    </div>
+                    <div>
+                        <img src="img/powerd_by.png" alt="android_logo">
+                    </div>
+                </div>
+            </div>
+            <div class="body-flex">
+                <div class="notification-bar">
+                    <div class="notification_flex">
+                        <div class="left-notification">
+                            <div class="f_cam">
+                                <span class="camera-lens"></span>
+                            </div>
+                            <div class="notification-time">
+                                <span class="hour"></span>:<span class="minute"></span>
+                            </div> 
                         </div>
-                        <div class="notification-time">
-                            <span class="hour"></span>:<span class="minute"></span>
-                        </div> 
-                    </div>
-                    <div class="notification-second-panel">
-                        <i class="fad fa-signal-alt"></i>
-                        <i class="fad fa-signal-3"></i>
-                        <i class="far fa-battery-full"></i>
+                        <div class="notification-second-panel">
+                            <i class="fad fa-wifi" id="statusWifi"></i>
+                            <i class="fad fa-bluetooth" id="statusBluetooth" style="margin-right: 2px;"></i>
+                            <i class="fad fa-signal-alt"></i>
+                            <span id="statusBarPercent" style="font-size: 8px; margin-right: 2px; position: relative; bottom: 3px;">100%</span>
+                            <i class="far fa-battery-full" id="statusBatteryIcon"></i>
+                        </div>
                     </div>
                 </div>
-            </div>
 
             <div class="middle_body">
                 <div class="hider-div">
@@ -255,6 +319,7 @@
             </div>
         </div>  
     </div>
+</div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
